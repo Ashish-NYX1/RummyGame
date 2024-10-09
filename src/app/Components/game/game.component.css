@@ -1,0 +1,23 @@
+.game-container {
+  text-align: center;
+}
+
+.hand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.card-hand {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 40px;
+    height: 60px;
+  }
+}

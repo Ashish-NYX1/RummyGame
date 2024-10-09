@@ -1,0 +1,18 @@
+<div class="game-container">
+  <h1>Rummy Game</h1>
+  <button (click)="startGame()">Start New Game</button>
+
+  <div class="hand-container">
+    <h2>Your Hand</h2>
+    <div class="card-hand">
+      <app-card *ngFor="let card of playerHand" [card]="card"></app-card>
+    </div>
+  </div>
+
+  <div class="hand-container">
+    <h2>Computer's Hand</h2>
+    <div class="card-hand">
+      <app-card *ngFor="let card of computerHand" [card]="card"></app-card>
+    </div>
+  </div>
+</div>
