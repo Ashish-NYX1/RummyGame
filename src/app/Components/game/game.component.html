@@ -1,18 +1,32 @@
 <div class="game-container">
   <h1>Rummy Game</h1>
-  <button (click)="startGame()">Start New Game</button>
+  <button class="btn-primary" (click)="startGame()">Start New Game</button>
+  <p>{{ gameStatus }}</p>
 
-  <div class="hand-container">
-    <h2>Your Hand</h2>
-    <div class="card-hand">
-      <app-card *ngFor="let card of playerHand" [card]="card"></app-card>
-    </div>
+  <div class="controls">
+    <button class="btn-secondary" (click)="playerDrawFromDeck()">Draw from Deck</button>
+    <button class="btn-secondary" (click)="playerDrawFromDiscard()">Draw from Discard</button>
   </div>
 
-  <div class="hand-container">
+  <div class="section-container">
+    <h2>Your Hand</h2>
+    <div class="card-hand">
+      <app-card *ngFor="let card of playerHand" [card]="card" (click)="selectedCard = card"></app-card>
+    </div>
+    <button *ngIf="selectedCard" class="btn-primary" (click)="playerDiscard(selectedCard)">Discard & Pass to Computer</button>
+  </div>
+
+  <div class="section-container">
     <h2>Computer's Hand</h2>
     <div class="card-hand">
       <app-card *ngFor="let card of computerHand" [card]="card"></app-card>
+    </div>
+  </div>
+
+  <div class="section-container discard-pile">
+    <h2>Discard Pile</h2>
+    <div class="discard-card" *ngFor="let card of gameService.discardPile">
+      <app-card [card]="card"></app-card>
     </div>
   </div>
 </div>

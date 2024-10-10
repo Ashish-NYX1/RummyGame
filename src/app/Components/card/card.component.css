@@ -9,6 +9,7 @@
   align-items: center;
   background-color: #fff;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .card-rank {
@@ -17,6 +18,12 @@
 
 .card-suit {
   font-size: 12px;
+}
+
+.hearts, .diamonds {
   color: red;
 }
 
+.clubs, .spades {
+  color: black;
+}
